@@ -93,6 +93,9 @@ To further enhance security, we can leverage AWS Key Management Service (KMS) fo
 - **Decryption Workflow:**
   - When retrieving data, the frontend decrypts the encrypted data key using AWS KMS.
   - The decrypted key is used to decrypt the user data locally.
+
+  **Merkle Tree Caching:**
+  - Caching Merkle trees or partial tree structures in a secure, in-memory store (e.g., Redis)allows faster retrieval of proofs and reduces computational overhead during repeated verification operations
   
 This ensures that even if the backend is compromised, sensitive encryption keys are never exposed. Key rotation policies in AWS KMS provide automated key management for compliance and enhanced security.
 
