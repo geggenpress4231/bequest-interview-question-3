@@ -73,15 +73,50 @@ In the event of tampering, the client can recover the original data using the fo
 
 ---
 
+---
+
 ## **Future Improvements**
 
-1. **JWT Authentication:**
-   - Add JSON Web Token (JWT) authentication to secure API endpoints.
-   - Only authenticated users can access or modify data, adding an additional layer of security.
+### 1. **Dynamic AWS-Based Encryption**
+To further enhance security, we can leverage AWS Key Management Service (KMS) for dynamic encryption:
 
-2. **Ledger-Based Merkle Root Storage:**
-   - Use a ledger or blockchain-like system to store Merkle roots.
-   - Immutable storage ensures that even the root cannot be tampered with by an untrusted backend.
+- **Frontend Integration:**
+  - Use AWS Cognito for user authentication to securely retrieve short-term credentials.
+  - Generate data encryption keys dynamically from AWS KMS for each session or operation.
+  - The encrypted data encryption keys (encrypted by AWS KMS) are stored alongside the data.
+  
+- **Encryption Workflow:**
+  - The frontend fetches a data key from AWS KMS (via authenticated API calls).
+  - Encrypt user data using the fetched data key locally.
+  - Store the encrypted data key alongside the encrypted user data in the backend.
+  
+- **Decryption Workflow:**
+  - When retrieving data, the frontend decrypts the encrypted data key using AWS KMS.
+  - The decrypted key is used to decrypt the user data locally.
+  
+This ensures that even if the backend is compromised, sensitive encryption keys are never exposed. Key rotation policies in AWS KMS provide automated key management for compliance and enhanced security.
+
+---
+
+### 2. **Tree Shaking for Utility File Obfuscation**
+To enhance frontend security and reduce the risk of exposing sensitive logic, we can implement tree shaking effectively:
+
+- **Bundling with Webpack or Vite:**
+  - Use `sideEffects: false` in the `package.json` to mark utility files as tree-shakable.
+  - Ensure only the necessary portions of utility files are included in the final build.
+
+- **Minification and Obfuscation:**
+  - Enable advanced minification using tools like Terser during the build process to obfuscate sensitive logic (e.g., encryption functions).
+  - Remove or replace comments and debug logs in production builds to reduce information leakage.
+
+- **Dynamic Imports:**
+  - Split the encryption and decryption logic into dynamically loaded chunks to delay their inclusion until needed.
+  - This further obscures the encryption utilities from being easily accessible in the initial application bundle.
+
+- **Environment Variables and Runtime Encryption:**
+  - Use environment-specific builds to inject runtime configurations (e.g., keys and IVs), making it harder for attackers to reverse-engineer sensitive logic from static builds.
+
+Implementing these improvements ensures both dynamic encryption and obscured logic in the frontend, elevating the overall security posture of the system.
 
 ---
 
