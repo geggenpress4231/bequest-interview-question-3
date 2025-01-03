@@ -85,7 +85,7 @@ In the event of tampering, the client can recover the original data using the fo
 
 ---
 
-## **UI Screenshot**
+## **UI Preview**
 Below is a preview of the user interface implemented in the project:
 
 ![UI Screenshot](ui_screenshot.png)
