@@ -73,4 +73,21 @@ In the event of tampering, the client can recover the original data using the fo
 
 ---
 
+## **Future Improvements**
+
+1. **JWT Authentication:**
+   - Add JSON Web Token (JWT) authentication to secure API endpoints.
+   - Only authenticated users can access or modify data, adding an additional layer of security.
+
+2. **Ledger-Based Merkle Root Storage:**
+   - Use a ledger or blockchain-like system to store Merkle roots.
+   - Immutable storage ensures that even the root cannot be tampered with by an untrusted backend.
+
+---
+
+## **UI Screenshot**
+Below is a preview of the user interface implemented in the project:
+
+![UI Screenshot](ui_screenshot.png)
+
 This approach ensures a robust and secure system for tamper-proof data, leveraging cryptographic techniques and versioning to maintain data integrity even in an untrusted backend environment.
