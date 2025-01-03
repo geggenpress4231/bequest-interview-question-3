@@ -12,7 +12,7 @@ The client ensures data integrity through a combination of the following mechani
 - Each piece of submitted data is hashed and incorporated into a Merkle Tree. 
 - The Merkle Tree root is version-controlled and stored on the backend.
 - The client can request Merkle proofs for specific data entries, allowing them to verify the inclusion of the entry in the tree.
-- A `checkTampering` endpoint validates historical roots and detects inconsistencies.
+- A `check-tampering` endpoint validates historical roots and detects inconsistencies.
 
 ### **Frontend Encryption**
 - Data is encrypted on the frontend before being sent to the backend using AES encryption.
