@@ -116,7 +116,6 @@ To enhance frontend security and reduce the risk of exposing sensitive logic, we
 - **Environment Variables and Runtime Encryption:**
   - Use environment-specific builds to inject runtime configurations (e.g., keys and IVs), making it harder for attackers to reverse-engineer sensitive logic from static builds.
 
-Implementing these improvements ensures both dynamic encryption and obscured logic in the frontend, elevating the overall security posture of the system.
 
 ---
 
