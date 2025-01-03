@@ -1,0 +1,149 @@
+/* App.css */
+
+/* Container */
+.app-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: absolute;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1.25rem;
+    background-color: #f0f4f8;
+    color: #333;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Title */
+  .app-title {
+    font-size: 2.5rem;  /* Increased title size for better prominence */
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2rem;  /* Increased margin-bottom */
+    text-align: center;
+  }
+  
+  /* Input field */
+  .input-field {
+    font-size: 1.25rem;
+    padding: 0.625rem;
+    width: 18.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .input-field:focus {
+    border-color: #2196F3;
+    outline: none;
+  }
+  
+  /* Buttons container */
+  .buttons-container {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    margin-top: 1.5rem;  /* Added more space between buttons */
+    width: 100%;
+  }
+  
+  /* Button */
+  .button {
+    font-size: 1.125rem;
+    padding: 0.625rem 1.25rem;
+    background-color: #2196F3;
+    color: #fff;
+    border: none;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto;
+  }
+  
+  .button:hover {
+    background-color: #1976D2;
+    transform: scale(1.05);
+  }
+  
+  .button:active {
+    transform: scale(1);
+  }
+  
+  /* Tampering Button */
+  .tamper-check-button {
+    font-size: 1.125rem;
+    padding: 0.625rem 1.25rem;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto;
+    margin-top: 1.5rem;
+  }
+  
+  .tamper-check-button:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05);
+  }
+  
+  .tamper-check-button:active {
+    transform: scale(1);
+  }
+  
+  /* Version selection */
+  .version-select-container {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+  
+  .version-select {
+    font-size: 1.125rem;
+    padding: 0.625rem;
+    width: 12.5rem;
+    border-radius: 0.3125rem;
+    border: 1px solid #ccc;
+    max-height: 9.375rem;
+    overflow-y: auto;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+  }
+  
+  .version-select:focus {
+    border-color: #2196F3;
+    outline: none;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .app-container {
+      padding: 1rem;
+      gap: 1.5rem;
+    }
+  
+    .version-select {
+      width: 100%;
+      max-height: 10rem;
+    }
+  
+    .input-field {
+      width: 100%;
+    }
+  
+    .buttons-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .button, .tamper-check-button {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
+  
